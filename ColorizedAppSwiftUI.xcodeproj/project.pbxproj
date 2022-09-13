@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		494C45B628D087BF000A1B63 /* ColorizedAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C45B528D087BF000A1B63 /* ColorizedAppSwiftUIApp.swift */; };
-		494C45B828D087BF000A1B63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C45B728D087BF000A1B63 /* ContentView.swift */; };
+		494C45B828D087BF000A1B63 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C45B728D087BF000A1B63 /* RootView.swift */; };
 		494C45BA28D087C3000A1B63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494C45B928D087C3000A1B63 /* Assets.xcassets */; };
 		494C45BD28D087C3000A1B63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494C45BC28D087C3000A1B63 /* Preview Assets.xcassets */; };
 		494C45C428D0D040000A1B63 /* ColorAdjustmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C45C328D0D040000A1B63 /* ColorAdjustmentView.swift */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		494C45B228D087BF000A1B63 /* ColorizedAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorizedAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		494C45B528D087BF000A1B63 /* ColorizedAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorizedAppSwiftUIApp.swift; sourceTree = "<group>"; };
-		494C45B728D087BF000A1B63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		494C45B728D087BF000A1B63 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		494C45B928D087C3000A1B63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		494C45BC28D087C3000A1B63 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		494C45C328D0D040000A1B63 /* ColorAdjustmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAdjustmentView.swift; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 		494C45CB28D11830000A1B63 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				494C45B728D087BF000A1B63 /* ContentView.swift */,
+				494C45B728D087BF000A1B63 /* RootView.swift */,
 				494C45C328D0D040000A1B63 /* ColorAdjustmentView.swift */,
 				494C45C528D0D721000A1B63 /* PaletteView.swift */,
 			);
@@ -168,7 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				494C45C428D0D040000A1B63 /* ColorAdjustmentView.swift in Sources */,
-				494C45B828D087BF000A1B63 /* ContentView.swift in Sources */,
+				494C45B828D087BF000A1B63 /* RootView.swift in Sources */,
 				494C45C628D0D721000A1B63 /* PaletteView.swift in Sources */,
 				494C45B628D087BF000A1B63 /* ColorizedAppSwiftUIApp.swift in Sources */,
 			);
