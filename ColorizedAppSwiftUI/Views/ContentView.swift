@@ -17,7 +17,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Color.indigo.ignoresSafeArea()
+            Color.indigo.opacity(0.7).ignoresSafeArea()
             VStack(spacing: 20) {
                 PaletteView(
                     color: Color(red: red/255, green: green/255, blue: blue/255)
