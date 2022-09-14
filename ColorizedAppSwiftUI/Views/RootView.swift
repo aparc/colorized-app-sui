@@ -9,11 +9,11 @@ import SwiftUI
 
 struct RootView: View {
     
-    @FocusState private var focusedColorField: Color?
-    
     @State private var red = Double.random(in: 0...255).rounded()
     @State private var green = Double.random(in: 0...255).rounded()
     @State private var blue = Double.random(in: 0...255).rounded()
+    
+    @State private var focusedColor: Color?
     
     var body: some View {
         ZStack {
@@ -24,9 +24,9 @@ struct RootView: View {
                 )
                 .frame(height: 200)
                 
-                ColorAdjustmentView(value: $red, focus: _focusedColorField, adjustedColor: .red)
-                ColorAdjustmentView(value: $green, focus: _focusedColorField, adjustedColor: .green)
-                ColorAdjustmentView(value: $blue, focus: _focusedColorField, adjustedColor: .blue)
+                ColorAdjustmentView(value: $red, focusOn: $focusedColor, adjustedColor: .red)
+                ColorAdjustmentView(value: $green, focusOn: $focusedColor, adjustedColor: .green)
+                ColorAdjustmentView(value: $blue, focusOn: $focusedColor, adjustedColor: .blue)
                 
                 Spacer()
             }
@@ -47,19 +47,19 @@ struct RootView: View {
             }
             Spacer()
             Button("Done") {
-                focusedColorField = nil
+                focusedColor = nil
             }
         }
     }
     
     private func focusUp() {
-        guard let focusedColorField = focusedColorField else { return }
-        self.focusedColorField = nextFocusedColor(after: focusedColorField, downWard: false)
+        guard let focusedColorField = focusedColor else { return }
+        self.focusedColor = nextFocusedColor(after: focusedColorField, downWard: false)
     }
     
     private func focusDown() {
-        guard let focusedColorField = focusedColorField else { return }
-        self.focusedColorField = nextFocusedColor(after: focusedColorField)
+        guard let focusedColorField = focusedColor else { return }
+        self.focusedColor = nextFocusedColor(after: focusedColorField)
     }
     
     private func nextFocusedColor(after color: Color, downWard: Bool = true) -> Color {

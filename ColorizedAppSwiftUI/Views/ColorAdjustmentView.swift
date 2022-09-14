@@ -10,9 +10,10 @@ import SwiftUI
 struct ColorAdjustmentView: View {
     
     @Binding var value: Double
-    @FocusState var focus: Color?
+    @Binding var focusOn: Color?
     let adjustedColor: Color
     
+    @FocusState private var focused: Color?
     @State private var textFieldValue = ""
     @State private var alertPresented = false
     
@@ -25,15 +26,15 @@ struct ColorAdjustmentView: View {
             
             Slider(value: $value, in: 0...255, step: 1)
                 .tint(adjustedColor)
-                .onChange(of: value) { newValue in
-                    textFieldValue = newValue.formatted()
+                .onChange(of: value) {
+                    textFieldValue = $0.formatted()
                 }
             
             TextField("", text: $textFieldValue)
                 .multilineTextAlignment(.trailing)
                 .textFieldStyle(.roundedBorder)
                 .keyboardType(.numberPad)
-                .focused($focus, equals: adjustedColor)
+                .focused($focused, equals: adjustedColor)
                 .frame(width: 50)
                 .alert(isPresented: $alertPresented) {
                     Alert(
@@ -42,9 +43,15 @@ struct ColorAdjustmentView: View {
                     )
                 }
         }
-        .onChange(of: focus) { [focus] _ in
-            let previousFocus = focus
+        .onChange(of: focused) { [focused] newValue in
+            if newValue == adjustedColor {
+                focusOn = newValue
+            }
+            let previousFocus = focused
             handleFocus(previousFocus)
+        }
+        .onChange(of: focusOn) {
+            focused = $0
         }
         .onAppear {
             textFieldValue = value.formatted()
@@ -62,7 +69,7 @@ struct ColorAdjustmentView: View {
         } else {
             value = 0
             alertPresented.toggle()
-            self.focus = nil
+            self.focusOn = nil
         }
     }
     
@@ -70,6 +77,6 @@ struct ColorAdjustmentView: View {
 
 struct SliderView_Previews: PreviewProvider {
     static var previews: some View {
-        ColorAdjustmentView(value: .constant(21), adjustedColor: .green)
+        ColorAdjustmentView(value: .constant(21), focusOn: .constant(.blue), adjustedColor: .green)
     }
 }
