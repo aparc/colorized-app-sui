@@ -11,7 +11,7 @@ struct ColorAdjustmentView: View {
     
     @Binding var value: Double
     @FocusState var focus: Color?
-    var adjustedColor: Color
+    let adjustedColor: Color
     
     @State private var textFieldValue = ""
     @State private var alertPresented = false

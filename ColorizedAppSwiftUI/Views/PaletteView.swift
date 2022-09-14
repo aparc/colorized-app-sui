@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PaletteView: View {
-    var color: Color
+    let color: Color
     
     var body: some View {
         RoundedRectangle(cornerRadius: 16)
