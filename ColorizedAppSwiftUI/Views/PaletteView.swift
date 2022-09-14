@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct PaletteView: View {
-    let color: Color
+    let red: Double
+    let green: Double
+    let blue: Double
     
     var body: some View {
         RoundedRectangle(cornerRadius: 16)
-            .fill(color)
+            .fill(Color(red: red, green: green, blue: blue))
             .overlay(
                 RoundedRectangle(cornerRadius: 16)
                     .stroke(.white, lineWidth: 3)
@@ -22,6 +24,6 @@ struct PaletteView: View {
 
 struct PaletteView_Previews: PreviewProvider {
     static var previews: some View {
-        PaletteView(color: .green)
+        PaletteView(red: 255, green: 255, blue: 255)
     }
 }

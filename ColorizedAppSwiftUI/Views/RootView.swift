@@ -19,10 +19,7 @@ struct RootView: View {
         ZStack {
             Color.indigo.opacity(0.7).ignoresSafeArea()
             VStack(spacing: 20) {
-                PaletteView(
-                    color: Color(red: red/255, green: green/255, blue: blue/255)
-                )
-                .frame(height: 200)
+                PaletteView(red: red/255, green: green/255, blue: blue/255).frame(height: 200)
                 
                 ColorAdjustmentView(value: $red, focusOn: $focusedColor, adjustedColor: .red)
                 ColorAdjustmentView(value: $green, focusOn: $focusedColor, adjustedColor: .green)
